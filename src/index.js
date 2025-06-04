@@ -8,6 +8,7 @@ import {
   KeyboardAvoidingView,
   Platform,
   View,
+  Keyboard,
 } from 'react-native';
 import styles from './style';
 
@@ -84,6 +85,8 @@ const RBSheet = forwardRef((props, ref) => {
 
   // Function to handle the visibility of the modal
   const handleSetVisible = visible => {
+    Keyboard.dismiss();
+
     if (visible) {
       setModalVisible(visible);
       // Call onOpen callback if provided
